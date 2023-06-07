@@ -14,7 +14,6 @@ RUN apt-get update && \
     apt-get install -y nginx && \
     rm -rf /var/lib/apt/lists/* && \
     rm /etc/nginx/sites-enabled/default
-COPY default.conf /etc/nginx/conf.d/
 # Install serve for serving static files
 RUN npm install -g serve
 EXPOSE 3000

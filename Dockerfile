@@ -10,9 +10,7 @@ FROM node:16
 WORKDIR /usr/src/app
 COPY --from=build /usr/src/app/build ./build
 # Install and setup Nginx
-RUN apt-get update && \
-    apt-get install -y nginx && \
-    rm /etc/nginx/sites-enabled/default
+
 COPY default.conf /etc/nginx/conf.d/
 # Install serve for serving static files
 RUN npm install -g serve
